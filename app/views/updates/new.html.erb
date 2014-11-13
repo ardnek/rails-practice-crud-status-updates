@@ -1,0 +1,24 @@
+ENTER NEW STATUS UPDATE:
+
+<% if @update.errors.present? %>
+<ul>
+  <% @update.errors.full_messages.each do |message| %>
+  <li><%= message %></li>
+  <% end %>
+</ul>
+<% end %>
+
+<%= form_for @update do |f| %>
+
+    <%= f.label :status %>
+    <%= f.text_field :status %>
+
+    <%= f.label :user %>
+    <%= f.text_field :user %>
+
+    <%= f.label :likes %>
+    <%= f.number_field :likes %>
+
+    <%= f.submit "Enter status" %>
+
+<% end %>

@@ -1,0 +1,31 @@
+STATUS UPDATES:
+
+  <%= notice %>
+
+<table>
+  <thead>
+    <tr>
+      <th>Status</th>
+      <th>User</th>
+      <th>Likes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @updates.each do |update| %>
+    <tr>
+      <td><%= update.status %></td>
+      <td><%= update.user %></td>
+      <td><%= update.likes %></td>
+      <td><%= link_to "Edit", edit_update_path(update) %></td>
+      <td><%= link_to "Show", update %></td>
+      <td><%= link_to "Delete", update, method: :delete %></td>
+    </tr>
+
+<% end %>
+  </tbody>
+
+</table>
+
+
+
+<%= link_to "New status update", new_update_path %>
